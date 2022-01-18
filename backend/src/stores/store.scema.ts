@@ -4,6 +4,7 @@ export class Rating extends Document {
     user: string;
     rating: number;
     comment: string;
+    time: Date;
 }
 
 export class Store extends Document {
@@ -15,9 +16,16 @@ export class Store extends Document {
 }
 
 export const StoreSchema = new Schema({
-    name: { type: String },
-    address: { type: String },
+    name: { type: String, required: true },
+    address: { type: String, required: true },
     telephone: { type: String },
     keywords: { type: [String] },
-    ratings: { type: [Object] },
+    ratings: {
+        type: [{
+            user: { type: String, required: true },
+            rating: { type: Number, required: true },
+            comment: { type: String, required: true },
+            time: { type: Date, required: true, default: Date.now },
+        }]
+    },
 });

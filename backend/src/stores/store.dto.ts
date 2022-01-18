@@ -1,7 +1,7 @@
 import { Type } from 'class-transformer';
 import { IsArray, IsNotEmpty, IsNumber, IsString, ValidateNested } from 'class-validator';
 
-class Rating {
+export class RatingDto {
   @IsNotEmpty()
   @IsString()
   user: string;
@@ -33,6 +33,6 @@ export class StoreDto {
 
   @IsArray()
   @ValidateNested({ each: true })
-  @Type(() => Rating)
-  ratings: Rating[];
+  @Type(() => RatingDto)
+  ratings: RatingDto[];
 }
