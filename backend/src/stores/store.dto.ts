@@ -28,6 +28,10 @@ export class StoreDto {
   @IsString()
   telephone: string;
 
+  @IsNotEmpty()
+  @IsString()
+  photo: string;
+
   @IsArray()
   keywords: string[];
 
