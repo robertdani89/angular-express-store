@@ -1,0 +1,2 @@
+<fa-icon *ngFor="let item of items; index as i" [icon]="faHeart" [ngClass]="enabled ? 'enabled' : ''"
+    (click)="handleClick(i)" [styles]="i < _ratingNumber ? {'stroke': 'gold', 'color': 'gold'} : {}"></fa-icon>

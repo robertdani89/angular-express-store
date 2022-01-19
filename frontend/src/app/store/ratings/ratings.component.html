@@ -1,0 +1,11 @@
+<div class="heading">
+    <fa-icon [icon]="faBullhorn" size="2x"></fa-icon>
+    <h4>Ratings</h4>
+</div>
+
+<app-store-new-rating [store]="store"></app-store-new-rating>
+
+<div class="row">
+    <app-store-rating class="col-md-6 col-xl-4" *ngFor="let rating of OrderedStoreRatings" [rating]="rating">
+    </app-store-rating>
+</div>

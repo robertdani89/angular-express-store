@@ -1,0 +1,11 @@
+<div *ngIf="rating" class="conainer">
+    <div class="heading">
+        <fa-icon [icon]="faHorseHead" size="2x"></fa-icon>
+        <h5>{{rating?.user}} says</h5>
+    </div>
+
+    <div class="content">
+        <app-store-indicator [enabled]="false" [ratingNumber]="rating.rating"></app-store-indicator>
+        <p>{{rating?.comment}}</p>
+    </div>
+</div>

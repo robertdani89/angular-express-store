@@ -1,0 +1,22 @@
+<div class="heading">
+    <fa-icon [icon]="faInfoCircle" size="2x"></fa-icon>
+    <h4>Store info</h4>
+</div>
+
+<div class="info-holder">
+    <table class="table table-bordered">
+        <tr>
+            <td>Address</td>
+            <td>{{store?.address}}</td>
+        </tr>
+        <tr>
+            <td>Telephone</td>
+            <td>{{store?.telephone}}</td>
+        </tr>
+        <tr>
+            <td>KeyWords</td>
+            <td>{{store && store.keywords.join(",")}}</td>
+        </tr>
+    </table>
+
+</div>

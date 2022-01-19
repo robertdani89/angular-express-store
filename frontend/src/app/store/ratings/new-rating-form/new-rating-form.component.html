@@ -1,0 +1,16 @@
+<h4>Leave a review!</h4>
+
+<form [formGroup]="ratingFormGroup" (ngSubmit)="onFormSubmit()">
+    <div class="row">
+        <div class="col-md-4">
+            Your time there: <app-store-indicator [rating]="Rating" (ratingChanged)="handleRaingChange($event)">
+            </app-store-indicator>
+        </div>
+        <div class="col-md-6">
+            <textarea formControlName="comment" placeholder="Tell us about this place!"></textarea>
+        </div>
+        <div class="col-md-2">
+            <button type="submit">Submit</button>
+        </div>
+    </div>
+</form>
