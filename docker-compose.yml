@@ -1,8 +1,16 @@
 version: "3.8"
 services:
   mongodb:
-    image : mongo
+    image: mongo
     container_name: mongodb
     ports:
       - 27017:27017
     restart: unless-stopped
+  webserver:
+    image: pawsubbe/store-webserver
+    container_name: webserver
+    ports:
+      - 80:80
+    environment:
+      - NODE_ENV=production
+      - DATABASE_URI=mongodb://mongodb:27017/store
